@@ -6,14 +6,16 @@
  */
 int main(void)
 {
-char numbers, a;
-for (numbers = '0'; numbers <= '9'; numbers++)
+int n;
+char letter;
+
+for (n = '0' ; n <= '9' ; n++)
 {
-putchar(numbers);
+putchar(n);
 }
-for (a = 'a'; numbers <= 'f'; a++)
+for (letter = 'a' ; letter <= 'f' ; letter++)
 {
-putchar(a);
+putchar(letter);
 }
 putchar('\n');
 return (0);
