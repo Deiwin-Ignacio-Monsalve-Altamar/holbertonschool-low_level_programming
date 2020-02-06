@@ -9,21 +9,19 @@
 int main(void)
 {
 int n;
-
+char Primer[] = "Last digit of";
+char Segunda[] = "is";
+char Tercer[] = "and is 0";
+char Cuarta[] = "and is greater than 5";
+char Quinta[] = "and is less than 6 and not 0";
 srand(time(0));
-n =rand() - RAND_MAX / 2;
-n = n % 10;
-if (n > 5)
-{
-printf("Last digit of %d is %i and is greater than 5\n", n, n);
-}
-else if (n == 0)
-{
-printf("Last digit of %d is %i and is 0\n", n, n);
-}
+n = rand() - RAND_MAX / 2;
+int x = n % 10;
+if (x > 5)
+printf("%s %d %s %i %s\n", Primer, n, Segunda, x, Cuarta);
+else if (x == 0)
+printf("%s %d %s %i %s\n", Primer, n, Segunda, x, Tercer);
 else
-{
-printf("Last digit of %d is %i and is less than 6 and not 0\n", n, n);
-}
+printf("%s %d %s %i %s\n", Primer, n, Segunda, x, Quinta);
 return (0);
 }
