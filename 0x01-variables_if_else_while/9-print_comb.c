@@ -9,7 +9,7 @@ int main(void)
 int n;
 char letter;
 
-for (n = '0' ; n <= '9' ; n++)
+for (n = '0'; n <= '9'; n++)
 {
 purchar(n);
 if (n < '9')
