@@ -11,19 +11,19 @@ int main(void)
 int n;
 
 srand(time(0));
-n = rand() - RAND_MAX / 2;
-int x = n % 10;
-if (x > 5)
+n =rand() - RAND_MAX / 2;
+n = n % 10;
+if (n > 5)
 {
-printf("Last digit of %i is %i and is greater than 5\n", n, x);
+printf("Last digit of %d is %i and is greater than 5\n", n, n);
 }
-else if (x < 6)
+else if (n == 0)
 {
-printf("Last digit of %i is %i and is less than 6 and not 0\n", n, x);
+printf("Last digit of %d is %i and is 0\n", n, n);
 }
 else
 {
-printf("Last digit of %i is %i and is 0\n", n, x);
+printf("Last digit of %d is %i and is less than 6 and not 0\n", n, n);
 }
 return (0);
 }
