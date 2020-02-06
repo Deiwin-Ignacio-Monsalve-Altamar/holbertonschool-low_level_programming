@@ -12,14 +12,10 @@ char letter;
 for (n = '0' ; n <= '9' ; n++)
 {
 purchar(n);
-if (n < 9)
+if (n < '9')
 {
-purchar(' ');
 purchar(',');
-}
-else
-{
-purchar('$');
+purchar(' ');
 }
 }
 putchar('\n');
