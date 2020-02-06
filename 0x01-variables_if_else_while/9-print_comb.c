@@ -7,7 +7,6 @@
 int main(void)
 {
 int n;
-char letter;
 
 for (n = '0'; n <= '9'; n++)
 {
