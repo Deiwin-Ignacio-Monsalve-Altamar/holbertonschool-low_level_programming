@@ -6,11 +6,10 @@
  */
 int main(void)
 {
-int i = 0;
-while (i < 10)
+int numbers;
+for(numbers = 0; numbers < 10; numbers++)
 {
-putchar(i);
-alphabet++;
+putchar(numbers);
 }
 putchar('\n');
 return (0);
