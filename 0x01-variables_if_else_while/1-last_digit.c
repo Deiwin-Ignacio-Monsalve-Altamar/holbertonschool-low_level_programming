@@ -9,11 +9,11 @@
 int main(void)
 {
 int n;
-char Primer[] = "Last digit of";
-char Segunda[] = "is";
-char Tercer[] = "and is 0";
-char Cuarta[] = "and is greater than 5";
-char Quinta[] = "and is less than 6 and not 0";
+char Primer[13] = "Last digit of";
+char Segunda[2] = "is";
+char Tercer[8] = "and is 0";
+char Cuarta[19] = "and is greater than 5";
+char Quinta[28] = "and is less than 6 and not 0";
 srand(time(0));
 n = rand() - RAND_MAX / 2;
 int x = n % 10;
