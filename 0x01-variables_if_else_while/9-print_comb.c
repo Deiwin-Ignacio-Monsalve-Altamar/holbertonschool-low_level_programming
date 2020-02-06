@@ -10,11 +10,11 @@ int n;
 
 for (n = '0'; n <= '9'; n++)
 {
-purchar(n);
+putchar(n);
 if (n < '9')
 {
-purchar(',');
-purchar(' ');
+putchar(',');
+putchar(' ');
 }
 }
 putchar('\n');
