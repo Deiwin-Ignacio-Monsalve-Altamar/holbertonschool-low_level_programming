@@ -15,11 +15,11 @@ putchar(x);
 putchar(z);
 for (m = z + '0'; m <= '9'; m++)
 {
-}
 if (!(z == '8' && m == '9'))
 {
 putchar(',');
 putchar(' ');
+}
 }
 }
 }
