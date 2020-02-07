@@ -13,7 +13,7 @@ for (int z = '0' ; z <= '9' ; z++)
 {
 putchar(x);
 putchar(z);
-if (!(a == '9' && b == '9'))
+if (!(x == '9' && z == '9'))
 {
 putchar(',');
 putchar(' ');
