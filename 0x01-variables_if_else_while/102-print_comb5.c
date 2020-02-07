@@ -6,18 +6,23 @@
  */
 int main(void)
 {
-  int x, z, m, y;
+int x, z, m, y;
 for (x = '0' ; x <= '9' ; x++)
 {
 for (z = '0' ; z <= '8' ; z++)
 {
 for (m = '0'; m <= '9'; m++)
 {
-for(y = '1'; y <= '9'; y++)
+for (y = '1'; y <= '9'; y++)
 {
+if(z == '8')
+{
+m = '9';
+y = '9';
+}
 putchar(x);
 putchar(z);
-putchar(' '); 
+putchar(' ');
 putchar(m);
 putchar(y);
 if (!(x == '9' && z == '8' && m == '9' && y == '9'))
