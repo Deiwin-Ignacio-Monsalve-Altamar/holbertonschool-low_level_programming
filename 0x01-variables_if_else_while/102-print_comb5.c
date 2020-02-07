@@ -1,37 +1,39 @@
 #include <stdio.h>
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
+ * main - main principal
+ * Return: value zero
  */
 int main(void)
 {
-int x, z, m, y;
-for (x = '0' ; x <= '9' ; x++)
+int num1, num2, num3, num4;
+int aux1, aux2;
+for (num1 = 0; num1 <= 9; num1++)
 {
-for (z = '0' ; z <= '8' ; z++)
+for (num2 = 0; num2 <= 9; num2++)
 {
-for (m = '0'; m <= '9'; m++)
+aux1 = num1;
+aux2 = num2;
+for (num3 = aux1; num3 <= 9; num3++)
 {
-for (y = '1'; y <= '9'; y++)
+num4 = aux2 + 1;
+while (num4 <= 9)
 {
-if(z == '8')
+putchar((char) (num1 + 48));
+putchar((char) (num2 + 48));
+putchar(32);
+putchar((char) (num3 + 48));
+putchar((char) (num4 + 48));
+if (!(num1 == 9 && num2 == 8 && num3 == 9 && num4 == 9))
 {
-m = '9';
-y = '9';
+putchar(44);
+putchar(32);
 }
-putchar(x);
-putchar(z);
-putchar(' ');
-putchar(m);
-putchar(y);
-if (!(x == '9' && z == '8' && m == '9' && y == '9'))
-{
-putchar(',');
-putchar(' ');
+num4++;
 }
+aux2 = -1;
 }
-}
+if (num1 == 9 && num2 == 8)
+break;
 }
 }
 putchar('\n');
