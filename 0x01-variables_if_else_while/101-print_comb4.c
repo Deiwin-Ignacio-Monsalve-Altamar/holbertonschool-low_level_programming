@@ -16,7 +16,7 @@ for (m = 1 + z; m <= '9'; m++)
 putchar(x);
 putchar(z);
 putchar(m);
-if (!(z == '8' && m == '9'))
+if (!(x = 7 && z = '8' && m = '9'))
 {
 putchar(',');
 putchar(' ');
