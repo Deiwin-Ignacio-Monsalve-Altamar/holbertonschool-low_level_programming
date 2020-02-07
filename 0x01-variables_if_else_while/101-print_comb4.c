@@ -9,9 +9,9 @@ int main(void)
 int x, z, m;
 for (x = '0' ; x <= '7' ; x++)
 {
-for (z = x + '0' ; z <= '8' ; z++)
+for (z = x + 0 ; z <= '8' ; z++)
 {
-for (m = z + '0'; m <= '9'; m++)
+for (m = z + 0; m <= '9'; m++)
 {
 putchar(x);
 putchar(z);
