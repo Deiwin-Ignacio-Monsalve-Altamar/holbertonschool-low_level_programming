@@ -9,11 +9,10 @@ int main(void)
 int x, z;
 for (x = '0' ; x <= '8' ; x++)
 {
-for (z = 0 + x ; z <= '9' ; z++)
+for (z = 1 + x ; z <= '9' ; z++)
 {
 putchar(x);
 putchar(z);
-
 if (!(x == '8' && z == '9'))
 {
 putchar(',');
