@@ -6,16 +6,15 @@
  */
 int _islower(int c)
 {
-	int letter;
-	if (c >= 'a' && c <= 'z')
-	{
-		 letter = '1'; 
-		_putchar(letter);
+
+	if (c > 64 && c < 91)
+	{ 
+		return(0);
 	}
 	else 
 	{
-		letter = '0';
-        	_putchar(letter);
+		 
+        	return(1);
 	}
-	return (letter);
 }
+
