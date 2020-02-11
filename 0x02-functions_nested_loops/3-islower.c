@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
- * main - check the code for Holberton School students.
- *
+ * _islower - pritns times the alphabet
+ *@c: the integer to print
  * Return: Always 0.
  */
 int _islower(int c)

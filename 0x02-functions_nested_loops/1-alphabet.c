@@ -7,8 +7,8 @@
 int main(void)
 {
 char alphabet;
-alphabet = 'a';
-while (alphabet <= 'z')
+alphabet = 97;
+while (alphabet <= 122)
 {
 _putchar(alphabet);
 alphabet++;
