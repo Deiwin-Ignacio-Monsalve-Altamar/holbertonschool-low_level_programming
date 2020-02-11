@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * print_last_digit - print last digit
+ * print_last_digit - last digit
  * @n: the integer print
  * Return: n
  */
