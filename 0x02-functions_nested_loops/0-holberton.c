@@ -6,12 +6,13 @@
  */
 int main(void)
 {
-char nombre[] = "Holberton";
+char nombre[9] = "Holberton";
 
-for (int i  = 0; i < 10; i++)
+for (int i  = 0; i <= 8; i++)
 {
 	_putchar(nombre[i]);
 }
 _putchar('\n');
 return (0);
 }
+
