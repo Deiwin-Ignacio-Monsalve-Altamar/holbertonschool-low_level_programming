@@ -1,17 +1,18 @@
 #include "holberton.h"
 /**
- * main - check the code for Holberton School students.
+ * main - Entry point
  *
- * Return: Always 0.
+ * Return: Always 0 (Success)
  */
-void print_alphabet(void)
+int main(void)
 {
-char i;
-i = 97;
-while (i <= 122)
+char alphabet;
+alphabet = 'a';
+while (alphabet <= 'z')
 {
-_putchar(i);
-i++;
+_putchar(alphabet);
+alphabet++;
 }
 _putchar('\n');
+return (0);
 }
