@@ -6,15 +6,12 @@
  */
 int main(void)
 {
-_putchar('H');
-_putchar('o');
-_putchar('l');
-_putchar('b');
-_putchar('e');
-_putchar('r');
-_putchar('t');
-_putchar('o');
-_putchar('n');
+char nombre[] = "Holberton";
+
+for (int i  = 0; i < 10; i++)
+{
+	_putchar(nombre[i]);
+}
 _putchar('\n');
 return (0);
 }
