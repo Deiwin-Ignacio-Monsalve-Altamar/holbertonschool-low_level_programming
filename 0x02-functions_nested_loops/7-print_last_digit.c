@@ -2,11 +2,10 @@
 /**
  *print_last_digit - print last digit
  *@n: the integer print
- * Return: n
+ *Return: n
  */
 int print_last_digit(int n)
 {
-
 	if (n < 0)
 	{
 		n = n * -1;
