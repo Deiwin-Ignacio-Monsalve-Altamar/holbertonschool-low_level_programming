@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 /**
-* main - out (don’t delete it!) the part of the code that is causing the output to go into an infinite loop.
-* Return: 0
+* main -(don’t delete it!) 
+* * Return: 0
 */
 
 int main(void)
@@ -22,3 +22,4 @@ int main(void)
 
 	return (0);
 }
+
