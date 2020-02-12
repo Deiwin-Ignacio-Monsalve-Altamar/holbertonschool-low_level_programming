@@ -7,15 +7,21 @@
 
 int main(void)
 {
-	int i, n = 1, m = 2, fib;
+	unsigned long int  i, n = 1, m = 2, fib;
 
 	for (i = 1; i <= 50; ++i)
 	{
-		printf("%d, ", n);
-		fib = n + m;
-		n = m;
-		m = fib;
+		if(i != 50)
+		{
+			printf("%lu, ", n);
+			fib = n + m;
+			n = m;
+			m = fib;
+		}
+		else
+		{
+			printf("%lu\n", n);
+		}
 	}
-	putchar('\n');
 	return (0);
 }
