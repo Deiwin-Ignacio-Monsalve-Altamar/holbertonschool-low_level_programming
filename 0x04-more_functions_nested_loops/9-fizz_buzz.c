@@ -23,7 +23,7 @@ int main(void)
 			{
 				printf("Buzz ");
 			}
-			else if (multi == 3)
+			else if (multi == 0)
 			{
 				printf("Fizz ");
 			}
