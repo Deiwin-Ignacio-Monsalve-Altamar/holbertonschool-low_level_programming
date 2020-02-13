@@ -6,7 +6,7 @@
 
 int main(void)
 {
-	unsigned long int a = 1, b = 1, i, c, sum = 0;
+	unsigned long int a = 1, b = 2, i, c, sum = 0;
 
 	for (i = 1; i <= 4000000; i++)
 	{
@@ -20,3 +20,4 @@ int main(void)
 	printf("%lu/n", sum);
 	return (0);
 }
+
