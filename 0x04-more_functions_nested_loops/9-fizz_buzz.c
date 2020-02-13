@@ -1,4 +1,3 @@
-#include "holberton.h"
 #include <stdio.h>
 /**
  * main - print fizz-buzz
@@ -26,9 +25,9 @@ int main(void)
 		}
 		else
 		{
-			printf("%d ", i);
+			printf("%i ", i);
 		}
 	}
-	putchar('\n');
+	printf("\n");
 }
 
