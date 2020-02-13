@@ -1,22 +1,22 @@
 #include <stdio.h>
 
 /**
-* main - tests function that 
+* main - tests function that
 * Return: 0
 */
 
 int main(void)
 {
-	int f1 = 2, f2 = 1, i;
+	unsigned int f1 = 2, f2 = 1, i, next;
 
 	for (i = 1; i <= 90; i++)
 	{
-		if(i != 90)
+		if (i != 90)
 		{
-			int next = f1 + f2;
+			next = f1 + f2;
 			f1 = f2;
 			f2 = next;
-			if(f2 == -f2)
+			if (f2 == -f2)
 			{
 				printf("%d, ", f2 * -1);
 			}
