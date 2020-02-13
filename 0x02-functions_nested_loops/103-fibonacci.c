@@ -17,7 +17,7 @@ int main(void)
 	a = b;
 	b = c;
 	}
-	printf("%lu/n", sum);
+	printf("%lu\n", sum);
 	return (0);
 }
 
