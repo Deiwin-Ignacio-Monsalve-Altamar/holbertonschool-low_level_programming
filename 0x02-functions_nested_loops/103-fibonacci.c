@@ -8,7 +8,7 @@ int main(void)
 {
 	unsigned long int a = 1, b = 2, i, c, sum = 0;
 
-	for (i = 1; i <= 4000000; i++)
+	for (i = 0; i <= 4000000; i++)
 	{
 	c = a + b;
 	if ((c % 2) == 0)
