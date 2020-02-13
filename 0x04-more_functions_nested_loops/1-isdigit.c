@@ -1,18 +1,22 @@
 #include "holberton.h"
+
 /**
- * _isdigit - print caracter
+ *_isdigit - print caracter
+ *
  * @c: the integer print
+ *
  * Return: the variable digit
  */
+
 int _isdigit(int c)
 {
-	if (c >= 'a' && c <= 'z')
+	if (c >= 48 && c <= 57)
 	{
-		return (0);
+		return (1);
 	}
 	else
 	{
-		return (1);
+		return (0);
 	}
 }
 
