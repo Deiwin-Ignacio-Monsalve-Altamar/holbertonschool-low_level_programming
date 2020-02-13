@@ -13,21 +13,28 @@ int main(void)
 	{
 		multi = i % 3;
 		multo = i % 5;
-		if (multi == 0 && multo == 0)
+		if (i != 100)
 		{
-			printf("FizzBuzz ");
-		}
-		else if (multi == 0)
-		{
-			printf("Fizz ");
-		}
-		else if (multo == 0)
-		{
-			printf("Buzz ");
+			if (multi == 0)
+			{
+				printf("Fizz ");
+			}
+			else if (multo == 0)
+			{
+				printf("Buzz ");
+			}
+			else if (multi == 0 && multo == 0)
+			{
+				printf("FizzBuzz ");
+			}
+			else
+			{
+				printf("%i ", i);
+			}
 		}
 		else
 		{
-			printf("%i ", i);
+			printf("Buzz");
 		}
 	}
 	printf("\n");
