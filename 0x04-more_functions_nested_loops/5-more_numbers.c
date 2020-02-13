@@ -3,6 +3,7 @@
 /**
  * more_numbers - print ten times the numbers;
  *
+ *Return: Always 0
  */
 
 void more_numbers(void)
@@ -21,8 +22,8 @@ void more_numbers(void)
 			}
 			else
 			{
-				_putchar((j / 10) + '0');
-				_putchar((j % 10) + '0');
+				_putchar((char)(j / 10) + '0');
+				_putchar((char)(j % 10) + '0');
 			}
 			j++;
 		}
