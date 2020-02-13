@@ -7,11 +7,13 @@
 
 int main(void)
 {
-	int i;
+	int i, multi, multo;
 
 	for (i = 1; i <= 100; i++)
 	{
-		if ((i % 3 == 0) && (i % 5 == 0))
+		multi = i % 3;
+		multo = i % 5;
+		if (multi == 0 && multo == 0)
 		{
 			printf("FizzBuzz ");
 		}
