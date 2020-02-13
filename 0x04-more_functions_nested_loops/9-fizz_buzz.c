@@ -15,17 +15,17 @@ int main(void)
 		multo = i % 5;
 		if (i != 100)
 		{
-			if (multi == 0)
+			if (multi == 0 && multo == 0)
 			{
-				printf("Fizz ");
+				printf("FizzBuzz ");
 			}
 			else if (multo == 0)
 			{
 				printf("Buzz ");
 			}
-			else if (multi == 0 && multo == 0)
+			else if (multi == 3)
 			{
-				printf("FizzBuzz ");
+				printf("Fizz ");
 			}
 			else
 			{
