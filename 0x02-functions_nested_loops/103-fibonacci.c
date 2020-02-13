@@ -3,10 +3,9 @@
 * main - tests function that print fibonacci
 * Return: 0
 */
-
 int main(void)
 {
-	unsigned long int a = 1, b = 2, i, c, sum = 0;
+	unsigned long long a = 1, b = 2, i, c, sum = 0;
 
 	for (i = 0; i <= 4000000; i++)
 	{
