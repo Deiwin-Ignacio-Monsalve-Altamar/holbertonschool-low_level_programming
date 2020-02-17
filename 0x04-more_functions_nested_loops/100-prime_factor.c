@@ -7,9 +7,9 @@
 
 int main(void)
 {
-	long int n, div = 2, maxFact;
+	 int n, div = 2, maxFact;
 
-	n = 612852475143;
+	n = 15;
 
 	while (n != 0)
 	{
@@ -21,7 +21,7 @@ int main(void)
 			n = n / div;
 			if (n == 1)
 			{
-				printf("%ld\n", maxFact);
+				printf("%d\n", maxFact);
 				break;
 			}
 		}

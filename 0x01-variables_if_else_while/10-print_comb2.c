@@ -7,13 +7,13 @@
 int main(void)
 {
 int x, z;
-for (x = '0' ; x <= '9' ; x++)
+for (x = '0' ; x <= '8' ; x++)
 {
-for (z = '0' ; z <= '9' ; z++)
+for (z = 1 + x; z <= '9' ; z++)
 {
 putchar(x);
 putchar(z);
-if (!(x == '9' && z == '9'))
+if (!(x == '8' && z == '9'))
 {
 putchar(',');
 putchar(' ');
