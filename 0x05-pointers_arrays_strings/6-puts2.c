@@ -1,8 +1,9 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
  * puts2 - check the code for Holberton School students.
  * @str: pointer to the string
- * Return: Always void.
+ * Return: Always
  */
 void puts2(char *str)
 {
@@ -17,3 +18,4 @@ void puts2(char *str)
 	}
 	_putchar('\n');
 }
+
