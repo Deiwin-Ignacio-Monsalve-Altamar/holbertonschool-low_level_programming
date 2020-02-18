@@ -15,20 +15,15 @@ void puts_half(char *str)
 	if ((aux % 2) == 0)
 	{
 		n = (aux) / 2;
-		for (j = n; str[n] != '\0'; j++)
-		{
-			_putchar(str[n]);
-			n++;
-		}
 	}
 	else
 	{
 		n = (aux - 1) / 2;
-		for (j = n; str[n] != '\0'; j++)
-		{
-			_putchar(str[n]);
-			n++;
-		}
+	}
+	for (j = n; str[n] != '\0'; j++)
+	{
+		_putchar(str[n]);
+		n++;
 	}
 	_putchar('\n');
 }
