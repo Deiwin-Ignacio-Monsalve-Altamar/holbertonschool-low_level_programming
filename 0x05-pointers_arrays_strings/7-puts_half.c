@@ -15,18 +15,25 @@ void puts_half(char *str)
 	{
 		aux++;
 	}
-	if ((aux % 2) == 0)
+	if ((i % 2) == 0)
 	{
-		n = (aux) / 2;
+		n = aux / 2;
+		for (j = n; str[n] != '\0'; j++)
+		{
+			_putchar(str[n]);
+			n++;
+		}
+
 	}
 	else
 	{
-		n = (aux - 1) / 2;
-	}
-	for (j = n; str[n] != '\0'; j++)
-	{
-		_putchar(str[n]);
-		n++;
+		n = (i + 1) / 2;
+		for (j = (n + 1); str[n] != '\0'; j++)
+		{
+			_putchar(str[n]);
+			n++;
+		}
+
 	}
 	_putchar('\n');
 }
