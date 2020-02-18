@@ -1,21 +1,20 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
- * puts2 - check the code for Holberton School students.
- * @str: pointer to the string
- * Return: Always
+ * puts2 - Write a function that prints a string
+ * @str: string
+ * Return: void
  */
+
 void puts2(char *str)
 {
-	int i;
+	int x;
 
-	for (i = 0; str[i] != '\0'; i++)
+	for (x = 0; str[x] != '\0'; x++)
 	{
-		if ((str[i] % 2) == 0)
+		if ((x % 2) == 0)
 		{
-			_putchar(str[i]);
+			_putchar(str[x]);
 		}
 	}
 	_putchar('\n');
 }
-
