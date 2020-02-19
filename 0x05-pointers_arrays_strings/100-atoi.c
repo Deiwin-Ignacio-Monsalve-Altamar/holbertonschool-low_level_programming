@@ -27,7 +27,7 @@ int _atoi(char *s)
 		}
 		else if (bo == 1)
 		{
-			break
+			break;
 		}
 		i++;
 	}
