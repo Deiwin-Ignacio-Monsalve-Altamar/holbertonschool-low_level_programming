@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdio.h>
+
 /**
  * *cap_string - print character
  * @str: pointr character
@@ -7,36 +8,26 @@
  */
 char *cap_string(char *str)
 {
-	int i;
+	int x, y, i;
+	char s[] = {' ', '\t', '\n', ',', ';', '.', '!', '?',
 
-	for (i = 0; str[i] != '\0'; i++)
+			 '"', ')', '(', '{', '}'};
+
+	i = 32;
+
+	for (x = 0; str[x] != '\0'; x++)
 	{
-		if (str[i] == ' ' || str[i] == '	' || str[i] == '\n')
+		if (str[x] >= 97 && str[x] <= 122)
 		{
-			if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
-			{
-				str[i + 1] = str[i + 1] - 32;
-			}
+			str[x] = str[x] - i;
 		}
-		else if (str[i] == 33 || str[i] == 63 || str[i] == 34 || str[i] == 40)
+		i = 0;
+		for (y = 0; y < 12; y++)
 		{
-			if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
+			if (str[x] == s[y])
 			{
-				str[i + 1] = str[i + 1] - 32;
-			}
-		}
-		else if (str[i] == 41 || str[i] == '{' || str[i] == '}' || str[i] == 46)
-		{
-			if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
-			{
-				str[i + 1] = str[i + 1] - 32;
-			}
-		}
-		else if (str[i] == 44 || str[i] == 59)
-		{
-			if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
-			{
-				str[i + 1] = str[i + 1] - 32;
+				y = 12;
+				i = 32;
 			}
 		}
 	}
