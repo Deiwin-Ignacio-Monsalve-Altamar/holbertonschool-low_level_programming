@@ -8,21 +8,21 @@
  */
 void print_number(int n)
 {
-	if (n < 99)
+	unsigned int i = 0;
+
+	if (n < 0)
 	{
-		_putchar((char)((n / 100) / 10) + '0');
-		_putchar((char)(n / 10) + '0');
-	}
-	else if (n < 999)
-	{
-		_putchar((char)(((n / 1000) / 100) / 10) + '0');
-		_putchar((char)((n / 100) / 10) + '0');
-		_putchar((char)(n / 10) + '0');
+		i = -1 * n;
+		_putchar('-');
 	}
 	else
 	{
-		_putchar((char)(n / 10) + '0');
+		i = n;
 	}
-	_putchar((char)(n % 10) + '0');
+	if (i / 10)
+	{
+		print_number(i / 10);
+	}
+	_putchar('0' + i % 10);
 }
 
