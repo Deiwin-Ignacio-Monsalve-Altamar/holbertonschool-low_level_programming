@@ -6,8 +6,6 @@
  */
 char *leet(char *s)
 {
-	char *leet(char *s)
-{
 	int x, y;
 	int repla[] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
 	int encod[] = {'4', '3', '0', '7', '1'};
@@ -24,5 +22,4 @@ char *leet(char *s)
 		}
 	}
 	return (s);
-}
 }
