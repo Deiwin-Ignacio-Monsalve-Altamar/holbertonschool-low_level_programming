@@ -2,13 +2,13 @@
 /**
  * _puts_recursion - print puts
  * @s: pointr character
- * Return;
+ * Return: always 0
  **/
 void _puts_recursion(char *s)
 {
 	if (*s == '\0')
 	{
-		putchar('\n');
+		_putchar('\n');
 		return;
 	}
 	_putchar(*s);
