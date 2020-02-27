@@ -8,37 +8,37 @@
   */
 int isPalindromeRec(char *str, int s, int e)
 {
-	if (str == (str + e))
+	if (s < e)
 	{
-		return (0);
-	}
-	if (str != (str + e))
-	{
-		return (0);
-	}
-	if (str < (str + (e + 1)))
-	{
-		return (isPalindromeRec(str, s + 1, e - 1));
-	}
-	return (1);
-}
-/**
-  * _strlen_recursion - Return int
-  * @s: pointer
-  * Return: int
-  */
-
-int _strlen_recursion(char *s)
-{
-	int n = 0;
-
-	if (*s)
-	{
-		return (n);
+		if (str[s] == str[e])
+		{
+			return (isPalindromeRec(str, s + 1, e - 1));
+		}
+		else
+		{
+			return (0);
+		}
 	}
 	else
 	{
-		return (1 + _strlen_recursion(s + 1));
+		return (1);
+	}
+}
+/**
+  * _strlen_recursion - Return int
+  * @st: pointer
+  * Return: int
+  */
+
+int _strlen_recursion(char *st)
+{
+	if (*st == '\0')
+	{
+		return (0);
+	}
+	else
+	{
+		return (1 + _strlen_recursion(st + 1));
 	}
 }
 /**
@@ -49,12 +49,15 @@ int _strlen_recursion(char *s)
 
 int is_palindrome(char *s)
 {
-	int n = _strlen_recursion(s);
+	int n;
 
-	if (n == 0)
+	if (*s != '\0')
 	{
-	return (1);
+		n = _strlen_recursion(s);
+		return (isPalindromeRec(s, 0, n - 1));
 	}
-	return (isPalindromeRec(s, 0, n - 1));
+	else
+	{
+		return (1);
+	}
 }
-
