@@ -15,6 +15,7 @@ int main(int argc, char *argv[])
 
 	if (argc < 1)
 	{
+		putchar('0');
 		return (0);
 	}
 	for (x = 1; argv[x]; x++)
