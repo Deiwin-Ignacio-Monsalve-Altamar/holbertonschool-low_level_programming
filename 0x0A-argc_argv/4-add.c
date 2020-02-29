@@ -1,28 +1,33 @@
-#include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 /**
-* main - prints character
-* @argc: print
-* @argv: positions
-*
-* Return: 0
+ * main - sum 2 number
+ * @argc: The number of command line arguments
+ * @argv: An array containing the program command line arguments
+ * Return: int
  */
 int main(int argc, char *argv[])
 {
-	int i, suma = 0;
-	for (i = 0; i < argc; i++)
+	int x, y;
+
+	y = 0;
+
+	if (argc < 1)
 	{
-		if (atoi(argv[i]) >= 0 && !(argv[i] <= 'a' && argv[i] >= 'z'))
-		{
-			suma = suma + atoi(argv[i]);
-		}
-		else
+		printf("0\n");
+		return (0);
+	}
+	for (x = 1; argv[x]; x++)
+	{
+		if (!isdigit(*(argv[x])))
 		{
 			printf("Error\n");
 			return (1);
 		}
+		else
+			y = y + atoi(argv[x]);
 	}
-	printf("%d\n", suma);
+	printf("%d\n", y);
 	return (0);
 }
