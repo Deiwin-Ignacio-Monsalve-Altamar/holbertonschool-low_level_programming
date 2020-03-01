@@ -9,15 +9,15 @@
  */
 int main(int argc, char *argv[])
 {
-	int x, y;
+	int x, suma;
 
-	y = 0;
-
+	suma = 0;
 	if (argc < 1)
 	{
-		putchar('0');
-		return (0);
+		putchar('0\n');
 	}
+	else
+	{
 	for (x = 1; argv[x]; x++)
 	{
 		if (!isdigit(*(argv[x])))
@@ -26,8 +26,9 @@ int main(int argc, char *argv[])
 			return (1);
 		}
 		else
-			y = y + atoi(argv[x]);
+			suma += atoi(argv[x]);
 	}
-	printf("%d\n", y);
+	printf("%d\n", suma);
+	}
 	return (0);
 }
