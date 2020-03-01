@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 	suma = 0;
 	if (argc < 1)
 	{
-		putchar('0\n');
+		printf("0\n");
 	}
 	else
 	{
