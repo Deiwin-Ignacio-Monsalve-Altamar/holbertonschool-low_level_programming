@@ -1,6 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
+/**
+ *_isdigit - print caracter
+ *
+ * @c: the integer print
+ *
+ * Return: the variable digit
+ */
+
+int _isdigit(char *c)
+{
+	while (*c != '\0')
+	{
+		if (*c < 0 || *c > '9')
+		{
+			return (0);
+		}
+		c++;
+	}
+	return (1);
+
+}
 /**
  * main - sum 2 number
  * @argc: The number of command line arguments
@@ -12,23 +32,20 @@ int main(int argc, char *argv[])
 	int x, suma;
 
 	suma = 0;
-	if (argc < 1)
+	if (argc == 0)
 	{
 		printf("0\n");
 	}
-	else
+	for (x = 1; x < argc ; x++)
 	{
-	for (x = 1; argv[x]; x++)
-	{
-		if (!isdigit(*(argv[x])))
+		if (_isdigit(argv[x]))
+			suma += atoi(argv[x]);
+		else
 		{
 			printf("Error\n");
 			return (1);
 		}
-		else
-			suma += atoi(argv[x]);
 	}
 	printf("%d\n", suma);
-	}
 	return (0);
 }
