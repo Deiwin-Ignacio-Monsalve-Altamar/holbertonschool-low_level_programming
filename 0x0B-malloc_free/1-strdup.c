@@ -20,6 +20,6 @@ char *_strdup(char *str)
 	if (dst == NULL)
 		return (NULL);
 	for (x = 0; str[x] != '\0'; x++)
-			dst[x] = str[x];
+		dst[x] = str[x];
 	return (dst);
 }
