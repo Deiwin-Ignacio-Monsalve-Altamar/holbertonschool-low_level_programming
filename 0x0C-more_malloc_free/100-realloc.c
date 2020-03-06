@@ -1,34 +1,35 @@
-#include "holberton.h"
-#include <assert.h>
-#include <string.h>
 #include <stdlib.h>
-
+#include <stdio.h>
+#include "holberton.h"
 /**
-  * _realloc - print character
-  * @ptr: pointrs
-  * @old_size: integer
-  * @new_size: integer
-  * Return: int
-  */
+ * _realloc - reallocates a memory block using malloc and free
+ * @ptr: pointer
+ * @old_size: old size memory
+ * @new_size: new size memory
+ * Return: void
+ */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	void *ptrNew;
+	char *a, *auxp;
+	unsigned int x;
 
-	if (new_size == 0)
+	if (new_size == old_size)
+		return (ptr);
+	if (ptr == NULL)
+		return (malloc(new_size));
+	if ((new_size == 0) && (ptr != NULL))
 	{
 		free(ptr);
 		return (NULL);
 	}
-	else if (!ptr)
-		return (malloc(new_size));
-	else if (new_size <= old_size)
-		return (ptr);
-	assert((ptr) && (new_size > old_size));
-	ptrNew = malloc(new_size);
-	if (ptrNew)
+	a = malloc(new_size);
+	if (a == NULL)
+		return (NULL);
+	auxp = ptr;
+	for (x = 0; x < new_size && x < old_size; x++)
 	{
-		memcpy(ptrNew, ptr, old_size);
-		free(ptr);
+		a[x] = auxp[x];
 	}
-	return (ptrNew);
+	free(ptr);
+	return (a);
 }
