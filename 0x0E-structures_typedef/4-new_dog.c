@@ -9,7 +9,7 @@
   */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	int i, j;
+	int i, j, k;
 	dog_t *dog;
 
 	dog = malloc(sizeof(dog_t));
@@ -34,12 +34,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 			free(dog);
 			return (NULL);
 		}
-	for (j = 0; (*dog).name[j] != '\0'; j++)
-		(*dog).name[j] = name[j];
-	(*dog).name[j] = '\0';
+	for (k = 0; k < i; k++)
+		(*dog).name[k] = name[k];
+	(*dog).name[k] = '\0';
 	(*dog).age = age;
-	for (j = 0; (*dog).owner[j] != '\0'; j++)
-		(*dog).owner[j] = owner[j];
-	(*dog).owner[j] = '\0';
+	for (k = 0; k < j; k++)
+		(*dog).owner[k] = owner[k];
+	(*dog).owner[k] = '\0';
 	return (dog);
 }
