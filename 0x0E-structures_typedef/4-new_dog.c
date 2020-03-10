@@ -1,19 +1,36 @@
 #include "dog.h"
 #include <stdlib.h>
 /**
-  *init_dog - caracteristicas description
-  *@d: pointrs structrs
+  **new_dog - caracteristicas description
   *@name : character
   *@age : float
   *@owner: character
-  * Description: Longer description
+  *Return: dog_t
   */
 dog_t *new_dog(char *name, float age, char *owner)
 {
+	int i, j;
 	dog_t *dog;
 
-	(*dog).name = name;
+	dog = malloc(sizeof(dog_t));
+	if (dog == NULL)
+		return (dog);
+	for (i = 0; name[i]; i++)
+	(*dog).name = malloc(sizeof(char) * i);
+		if ((*dog).name == NULL)
+			free((*dog).name);
+	for (i = 0; owner[i]; i++)
+	(*dog).owner = malloc(sizeof(char) * i);
+		if ((*dog).owner == NULL)
+		{
+			free((*dog).owner);
+			free(dog);
+		}
+	for (j = 0; (*dog).name[j]; j++)
+		(*dog).name[j] = name[j];
 	(*dog).age = age;
-	(*dog).owner = owner;
+	for (j = 0; (*dog).owner[j]; j++)
+		(*dog).owner[j] = owner[j];
 	return (dog);
+
 }
