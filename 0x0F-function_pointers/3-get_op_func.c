@@ -1,10 +1,11 @@
+#include <string.h>
 #include "3-calc.h"
+
 /**
-* (*get_op_func) - suma
-* @b: integer
-* @a: integer
-* Return: int
-*/
+  * get_op_func - function that select the correct function
+  * @s: operator passes as argument
+  * Return: pointer to the function that corresponds to the operator
+  **/
 int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
@@ -16,8 +17,15 @@ int (*get_op_func(char *s))(int, int)
 		{NULL, NULL}
 	};
 	int i;
+
 	i = 0;
-	while (ops[i].)
-		i++
-	
+	while (ops[i].op)
+	{
+		if (strcmp(ops[i].op, s) == 0)
+			return (ops[i].f);
+		i++;
+	}
+	printf("Error\n");
+	exit(99);
+	return (NULL);
 }
