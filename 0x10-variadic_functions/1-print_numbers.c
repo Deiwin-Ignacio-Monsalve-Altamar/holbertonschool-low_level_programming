@@ -10,19 +10,21 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	va_list ap;
 	unsigned int i = 1;
 
-	if (separator != NULL)
+	va_start(ap, n);
+	while (i <= n)
 	{
-		va_start(ap, n);
-		while (i <= n)
+		if (separator != NULL)
 		{
 			printf("%d", va_arg(ap, const unsigned int));
 			if (i < n)
 				printf("%s", separator);
-			i++;
 		}
-		putchar('\n');
+		else
+			 printf("%d", va_arg(ap, const unsigned int));
+
+		i++;
 	}
-	else
-		return;
+	putchar('\n');
+
 	va_end(ap);
 }
