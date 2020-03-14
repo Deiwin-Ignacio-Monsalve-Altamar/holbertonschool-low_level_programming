@@ -1,8 +1,9 @@
 #include "variadic_functions.h"
 /**
- * sum_them_all - print sum
+ * print_strings - print strings
  * @n: const unsigned integer
- * Return: integer
+ * @separator: const unsigned char
+ * Return: 0
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
@@ -10,22 +11,24 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	unsigned int i = 1;
 	char *s;
 
-	if (separator != NULL)
+	va_start(ap, n);
+	while (i <= n)
 	{
-		va_start(ap, n);
-		while (i <= n)
+
+		s = va_arg(ap, char *);
+		if (separator != NULL)
 		{
-			s = va_arg(ap, char *);
 			if (s != NULL)
 				printf("%s", s);
 			else
 				printf("(nill)");
 			if (i < n)
 				printf("%s", separator);
-			else
-				putchar('\n');
-			i++;
 		}
-		va_end(ap);
+		else
+			printf("%s", s);
+		i++;
 	}
+	putchar('\n');
+	va_end(ap);
 }
