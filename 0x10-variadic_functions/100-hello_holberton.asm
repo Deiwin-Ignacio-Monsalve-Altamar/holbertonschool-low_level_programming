@@ -1,26 +1,19 @@
-    section .data
-fmt     db "%u  %s",10,0
-msg1    db "Hello,",0
-msg2    db "Holberton",0
+global _start
 
-    section .text
-    extern printf
-    global _start
+section .text
 
 _start:
-    mov  edx, msg1
-    mov  esi, 1
-    mov  edi, fmt
-    mov  eax, 0
-    call printf
 
-    mov  edx, msg2
-    mov  esi, 2
-    mov  edi, fmt
-    mov  eax, 0
-    call printf
+mov rax, 1
+mov sdi, 1
+mov rsi, Hello_Holberton
+mov rdx, length
+syscall
 
-    mov  ebx, 0
-    mov  eax, 1
-    int  0x80
+mov rax, 60
+mov rdi, 11
+syscall
 
+section .data
+Hello_Holberton: db "Hello, Holberton",0x0a
+length: equ $-Hello_Holberton
