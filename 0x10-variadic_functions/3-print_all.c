@@ -6,7 +6,7 @@
  */
 void c(va_list ap)
 {
-	printf("%c, ", va_arg(ap, int));
+	printf("%c", va_arg(ap, int));
 }
 /**
  *i - print char
@@ -15,7 +15,7 @@ void c(va_list ap)
  */
 void i(va_list ap)
 {
-	printf("%d, ", va_arg(ap, int));
+	printf("%d", va_arg(ap, int));
 }
 /**
  *f - print char
@@ -24,7 +24,7 @@ void i(va_list ap)
  */
 void f(va_list ap)
 {
-	printf("%f, ", va_arg(ap, double));
+	printf("%f", va_arg(ap, double));
 }
 /**
  *x - print char
@@ -53,6 +53,7 @@ void print_all(const char * const format, ...)
 	op_t ops[] = {{"c", c}, {"i", i}, {"f", f}, {"s", x}, {NULL, NULL}};
 	int i = 0;
 	int j;
+	char *p = "";
 	va_list ap;
 
 	va_start(ap, format);
@@ -62,7 +63,11 @@ void print_all(const char * const format, ...)
 		while (ops[j].op)
 		{
 			if (format[i] == ops[j].op[0])
+			{
+				printf("%s", p);
 				ops[j].f(ap);
+				p = ", ";
+			}
 			j++;
 		}
 		i++;
