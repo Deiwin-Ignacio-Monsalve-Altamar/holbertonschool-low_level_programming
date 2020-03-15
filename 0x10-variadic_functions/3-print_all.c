@@ -1,27 +1,72 @@
 #include "variadic_functions.h"
 /**
-* print_all - print other all
-* @format: const unsigned integer
-* Return: integer
-*/
+ *c - print char
+ *@ap: va_list
+ *Return 0
+ */
+void c(va_list ap)
+{
+	printf("%c, ", va_arg(ap, int));
+}
+/**
+ *i - print char
+ *@ap: va_list
+ *Return 0
+ */
+void i(va_list ap)
+{
+	printf("%d, ", va_arg(ap, int));
+}
+/**
+ *f - print char
+ *@ap: va_list
+ *Return 0
+ */
+void f(va_list ap)
+{
+	printf("%f, ", va_arg(ap, double));
+}
+/**
+ *x - print char
+ *@ap: va_list
+ *Return 0
+ */
+void x(va_list ap)
+{
+	char *s;
+
+	s = va_arg(ap, char *);
+	if (s != NULL)
+	{
+		printf("%s", s);
+		return;
+	}
+	printf("(nil)");
+}
+/**
+ *print_all - print char
+ *@format: const char * const
+ *Return 0
+ */
 void print_all(const char * const format, ...)
 {
-	int i;
-	int j = 0;
+	op_t ops[] = {{"c", c}, {"i", i}, {"f", f}, {"s", x}, {NULL, NULL}};
+	int i = 0;
+	int j;
 	va_list ap;
-	char next;
 
 	va_start(ap, format);
 	while (format[i])
 	{
-		while (j < format)
+		j = 0;
+		while (ops[j].op)
 		{
-			printf(va_arg(ap, *));
+			if (format[i] == ops[j].op[0])
+				ops[j].f(ap);
 			j++;
 		}
 		i++;
 	}
 	putchar('\n');
-
 	va_end(ap);
 }
