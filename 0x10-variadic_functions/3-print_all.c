@@ -1,77 +1,47 @@
 #include "variadic_functions.h"
-/**
- *c - print char
- *@ap: va_list
- *Return 0
- */
-void c(va_list ap)
-{
-	printf("%c", va_arg(ap, int));
-}
-/**
- *i - print char
- *@ap: va_list
- *Return 0
- */
-void i(va_list ap)
-{
-	printf("%d", va_arg(ap, int));
-}
-/**
- *f - print char
- *@ap: va_list
- *Return 0
- */
-void f(va_list ap)
-{
-	printf("%f", va_arg(ap, double));
-}
-/**
- *x - print char
- *@ap: va_list
- *Return 0
- */
-void x(va_list ap)
-{
-	char *s;
 
-	s = va_arg(ap, char *);
-	if (s != NULL)
-	{
-		printf("%s", s);
-		return;
-	}
-	printf("(nil)");
-}
 /**
- *print_all - print char
- *@format: const char * const
- *Return 0
+ * print_all - prints anything., followed by a new line.
+ * @format: const char const
+ * Return: void
  */
 void print_all(const char * const format, ...)
 {
-	op_t ops[] = {{"c", c}, {"i", i}, {"f", f}, {"s", x}, {NULL, NULL}};
-	int i = 0;
-	int j;
-	char *p = "";
-	va_list ap;
+	char *p;
+	int x = 0, y = 1;
+	va_list m;
 
-	va_start(ap, format);
-	while (format[i] != '\0')
+	va_start(m, format);
+	while (format && format[x])
 	{
-		j = 0;
-		while (ops[j].op != NULL)
+		switch (format[x])
 		{
-			if (format[i] == ops[j].op[0])
-			{
-				printf("%s", p);
-				ops[j].f(ap);
-				p = ", ";
-			}
-			j++;
+			case 'c':
+				printf("%c", va_arg(m, int));
+				break;
+			case 'i':
+				printf("%d", va_arg(m, int));
+				break;
+			case 'f':
+				printf("%f", va_arg(m, double));
+				break;
+			case 's':
+				p = va_arg(m, char*);
+				if (p != NULL)
+				{
+					printf("%s", p);
+					break;
+				}
+				printf("(nil)");
+				break;
+			default:
+				y = 0;
 		}
-		i++;
+		if (format[x + 1] != 0 && y)
+			printf(", ");
+		x++;
+		y++;
 	}
 	printf("\n");
-	va_end(ap);
+	va_end(m);
 }
