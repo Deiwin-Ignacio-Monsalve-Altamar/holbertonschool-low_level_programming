@@ -2,7 +2,7 @@
 /**
  * free_list -  free print cotaing in list
  * @head: pointrs list_t
- * Return: list
+ * Return: 0
  */
 void free_list(list_t *head)
 {
