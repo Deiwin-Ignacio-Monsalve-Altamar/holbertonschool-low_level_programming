@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <string.h>
 /**
  * add_node - print cotaing in list
  * @head: pointrs list_t
@@ -28,8 +27,24 @@ list_t *add_node(list_t **head, const char *str)
 		(*new).next = *head;
 	}
 	(*new).str = strdup(str);
-	(*new).len = strlen(str);
+	(*new).len = _strlen(str);
 	*head = new;
 
 	return (*head);
+}
+/**
+ * _strlen - logitud strings
+ * @str: const char
+ * Return: int
+ */
+int _strlen(const char *str)
+{
+	int i;
+
+	while (*str)
+	{
+		i++;
+		str++;
+	}
+	return (i);
 }
