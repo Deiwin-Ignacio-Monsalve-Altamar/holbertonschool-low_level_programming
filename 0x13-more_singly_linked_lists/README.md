@@ -7,7 +7,7 @@
  ## 0. Print list
 Write a function that prints all the elements of a listint_t list.
 
-## List length
+## 1. List length
 Write a function that returns the number of elements in a linked listint_t list.
 
 ## 2. Add node mandatory
@@ -37,7 +37,7 @@ Write a function that inserts a new node at a given position.
 ## 10. Delete at index
 Write a function that deletes the node at index index of a listint_t linked list.
 
-## ** 11. Reverse list #advanced **
+##  11. Reverse list #advanced 
 Write a function that reverses a listint_t linked list.
 
 ## 12. Print (safe version) #advanced
@@ -45,6 +45,9 @@ Write a function that prints a listint_t linked list.
 
 ## 13. Free (safe version) #advanced
 Write a function that frees a listint_t list.
+
+## 14. Find the loop
+Write a function that finds the loop in a linked list.
 
 <!-- Headings -->
 ## Example Struct
