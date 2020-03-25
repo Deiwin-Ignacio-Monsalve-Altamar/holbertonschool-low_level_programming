@@ -2,7 +2,7 @@
 /**
 *print_listint_safe - adding data a list
 *@head: pointer
-*Return: int
+*Return: size_t
 */
 size_t print_listint_safe(const listint_t *head)
 {
