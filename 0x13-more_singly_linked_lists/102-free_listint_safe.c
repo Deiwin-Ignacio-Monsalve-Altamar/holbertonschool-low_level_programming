@@ -1,12 +1,12 @@
 #include "lists.h"
 /**
 *free_listint_safe - adding data a list
-*@head: pointer
+*@h: double pointer
 *Return: size_t
 */
 size_t free_listint_safe(listint_t **h)
 {
-    size_t len = 0;
+	size_t len = 0;
 
 	if (*h == NULL)
 	{
@@ -21,11 +21,11 @@ size_t free_listint_safe(listint_t **h)
 		}
 		else
 		{
-            free(*h);
+			free(*h);
 			break;
 		}
 		*h = (*h)->next;
 	}
-    *h = NULL;
+	*h = NULL;
 	return (len);
 }
