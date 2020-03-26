@@ -18,4 +18,5 @@ int clear_bit(unsigned long int *n, unsigned int index);
 
 /*  function that returns the number of bits  get from one number to another.*/
 unsigned int flip_bits(unsigned long int n, unsigned long int m);
+int _putchar(char c);
 #endif
