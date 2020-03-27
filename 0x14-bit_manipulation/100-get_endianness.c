@@ -7,10 +7,12 @@
 */
 int get_endianness(void)
 {
-	int x, litle_or_big;
+	int x = 1;
+	char *s  = (char *)&x;
 
-	x = 0;
-
-	litle_or_big = (int) (((char *)&x)[0]);
-	return (litle_or_big);
+	if (!*s)
+	{
+		return (1);
+	}
+	return (0);
 }
