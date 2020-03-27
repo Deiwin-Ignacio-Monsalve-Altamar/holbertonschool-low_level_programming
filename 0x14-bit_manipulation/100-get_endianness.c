@@ -11,6 +11,6 @@ int get_endianness(void)
 
 	x = 0;
 
-	litle_or_big = (int)(((char *)&x)[0]);
+	litle_or_big = (int) (((char *)&x)[0]);
 	return (litle_or_big);
 }
