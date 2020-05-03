@@ -9,48 +9,43 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *new, *tmp, *con;
-	unsigned int i = 0, j = 0;
+	unsigned int auxposition = 0;
+	dlistint_t *add_nodo = NULL, *temp = NULL;
 
-	con = *h;
-	if (h == NULL)
+	if (h == NULL && *h == NULL)
 		return (NULL);
-
-	while (con)
-	{
-		con = con->next;
-		j++;
-	}
-	if (idx > j)
+	add_nodo = malloc(sizeof(dlistint_t));
+	if (add_nodo == NULL)
 		return (NULL);
-	new = malloc(sizeof(dlistint_t));
-	if (new == NULL)
-		return (NULL);
-	new->n = n;
-	/*insert nodo beginning*/
-	if (!idx && *h == 0)
+	add_nodo->n = n;
+	if (idx == 0)
 	{
-		new->prev = NULL;
-		new->next = NULL;
-		*h = new;
-		return (new);
+		add_nodo->next = *h;
+		add_nodo->prev = NULL;
+		*h = add_nodo;
+		return (add_nodo);
 	}
-	if (!idx)
+	temp = *h;
+	auxposition = 0;
+	while (temp)
 	{
-		new->prev = NULL;
-		new->next = *h;
-		(*h)->prev = new;
-		*h = new;
+		if (auxposition == idx)
+		{
+			temp->prev->next = add_nodo;
+			add_nodo->prev = temp->prev;
+			temp->prev = add_nodo;
+			add_nodo->next = temp;
+			return (add_nodo);
+		}
+		if (temp->next == NULL && ++auxposition == idx)
+		{
+			temp->next = add_nodo;
+			add_nodo->next = NULL;
+			add_nodo->prev = temp;
+			return (add_nodo);
+		}
+		auxposition++;
+		temp  = temp->next;
 	}
-	/*insert fin end*/
-	tmp = *h;
-	while (i < idx - 1 && tmp->next)
-	{
-		tmp = tmp->next;
-		i++;
-	}
-	new->next = tmp->next;
-	tmp->next = new;
-	new->prev = tmp;
-	return (new);
+	return (NULL);
 }
