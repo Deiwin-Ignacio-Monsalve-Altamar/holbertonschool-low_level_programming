@@ -31,6 +31,6 @@ int sum_dlistint(dlistint_t *head);
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n);
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);
 dlistint_t *crearnodo(const int i);
-dlistint_t *add_nodo_insert(dlistint_t **h, unsigned int idx, int n);
+dlistint_t *add_nodo_insert(dlistint_t *temp, dlistint_t *add_nodo);
 
 #endif /* LISTS_H */
