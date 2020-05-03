@@ -9,11 +9,13 @@
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	unsigned int auxposition = 0;
-	dlistint_t *add_nodo = NULL, *temp = NULL;
+	dlistint_t *add_nodo = NULL, *temp = *h;
 
 	if (h == NULL)
 		return (NULL);
 	add_nodo = malloc(sizeof(dlistint_t));
+	if (add_nodo == NULL)
+		return (NULL);
 	add_nodo->n = n;
 	if (!idx && *h == NULL)
 	{
@@ -30,8 +32,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		*h = add_nodo;
 		return (add_nodo);
 	}
-	temp = *h;
-	auxposition = 0;
 	while (temp)
 	{
 		if (auxposition == idx)
