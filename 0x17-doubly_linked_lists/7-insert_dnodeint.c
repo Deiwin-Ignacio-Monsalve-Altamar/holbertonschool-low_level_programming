@@ -13,44 +13,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	if (h == NULL)
 		return (NULL);
-	add_nodo = add_nodo_insert(h, idx, n);
-	if (add_nodo == NULL)
-		return (NULL);
-	temp = *h;
-	auxposition = 0;
-	while (temp)
-	{
-		if (auxposition == idx)
-		{
-			temp->prev->next = add_nodo;
-			add_nodo->prev = temp->prev;
-			temp->prev = add_nodo;
-			add_nodo->next = temp;
-			return (add_nodo);
-		}
-		if (temp->next == NULL && ++auxposition == idx)
-		{
-			temp->next = add_nodo;
-			add_nodo->next = NULL;
-			add_nodo->prev = temp;
-			return (add_nodo);
-		}
-		auxposition++;
-		temp  = temp->next;
-	}
-	return (NULL);
-}
-/**
- * add_nodo_insert - inserts a new node at a given position.
- * @h: dlistint variables struct
- * @idx: unsigned int
- * @n: int
- * Return: dlistint_t
- */
-dlistint_t *add_nodo_insert(dlistint_t **h, unsigned int idx, int n)
-{
-	dlistint_t *add_nodo = NULL;
-
 	add_nodo = malloc(sizeof(dlistint_t));
 	if (add_nodo == NULL)
 		return (NULL);
@@ -70,5 +32,20 @@ dlistint_t *add_nodo_insert(dlistint_t **h, unsigned int idx, int n)
 		*h = add_nodo;
 		return (add_nodo);
 	}
-	return (add_nodo);
+	temp = *h;
+	auxposition = 0;
+	while (temp)
+	{
+		if (auxposition == idx)
+		{
+			temp->prev->next = add_nodo;
+			add_nodo->prev = temp->prev;
+			temp->prev = add_nodo;
+			add_nodo->next = temp;
+			return (add_nodo);
+		}
+		auxposition++;
+		temp  = temp->next;
+	}
+	return (NULL);
 }
