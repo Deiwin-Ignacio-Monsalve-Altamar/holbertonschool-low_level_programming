@@ -18,8 +18,10 @@ void hash_table_delete(hash_table_t *ht)
 		runner = ht->array[index];
 		while (runner)
 		{
-			free(runner->key);
-			free(runner->value);
+			if (runner->key)
+				free(runner->key);
+			if (runner->value)
+				free(runner->value);
 			tmp = runner->next;
 			free(runner);
 			runner = tmp;
