@@ -1,9 +1,9 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_print -
- *
- * Return: 
+ * hash_table_print - print tables
+ * @ht: pointr table
+ * Return: always
  */
 void hash_table_print(const hash_table_t *ht)
 {
