@@ -3,7 +3,7 @@
 /**
  * hash_table_delete - free tables
  * @ht: pointr character
- * Return: 
+ * Return: always
  */
 void hash_table_delete(hash_table_t *ht)
 {
