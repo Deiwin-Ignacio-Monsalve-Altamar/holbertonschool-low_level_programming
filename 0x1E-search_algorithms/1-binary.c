@@ -35,7 +35,7 @@ int binary_search(int *array, size_t size, int value)
  * @left: poniter left
  * @array: list with numbers
  *
- * Return: integer
+ * Return: always 0
  */
 void print_array(int left, int right, int *array)
 {
