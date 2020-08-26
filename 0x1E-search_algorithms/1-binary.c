@@ -12,7 +12,7 @@ int binary_search(int *array, size_t size, int value)
 {
 	size_t apuntador1 = 0, apuntador2 = size - 1, apuntadorMitad, i;
 
-	if (!array || size == 0)
+	if (!array)
 		return (-1);
 
 	for (i = 0; i < size; i++)
@@ -20,7 +20,7 @@ int binary_search(int *array, size_t size, int value)
 		apuntadorMitad = (apuntador1 + apuntador2) / 2;
 
 		print_array(apuntador1, apuntador2, array);
-		if (apuntadorMitad == value)
+		if (apuntadorMitad == (size_t)value)
 			return (i);
 		else if (value > array[apuntadorMitad])
 			apuntador1 = apuntadorMitad + 1;
