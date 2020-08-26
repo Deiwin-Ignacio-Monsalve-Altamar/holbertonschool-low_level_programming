@@ -36,11 +36,12 @@ unsigned int end, int value, size_t size)
  */
 int jump_search(int *array, size_t size, int value)
 {
+	int i = 0;
+	int m = (int)sqrt(size);
+
 	if (!array)
 		return (-1);
 
-	int i = 0;
-	int m = (int)sqrt(size);
 
 	while (i < (int)size)
 	{
