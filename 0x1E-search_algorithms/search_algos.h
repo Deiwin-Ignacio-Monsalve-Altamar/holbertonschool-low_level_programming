@@ -12,4 +12,4 @@ void print_array(int left, int right, int *array);
 int jump_search(int *array, size_t size, int value);
 int interpolation_search(int *array, size_t size, int value);
 
-#endif /* SEARCH_ALGOS_H */
+#endif
