@@ -10,11 +10,12 @@
  */
 int binary_search(int *array, size_t size, int value)
 {
-	int apuntador1 = 0, apuntador2 = size - 1, apuntadorMitad, i;
+	size_t apuntador1 = 0, apuntador2 = size - 1, apuntadorMitad, i;
+
 	if (!array || size == 0)
 		return (-1);
 
-	for (i = 0; i < (int)size; i++)
+	for (i = 0; i < size; i++)
 	{
 		apuntadorMitad = (apuntador1 + apuntador2) / 2;
 
