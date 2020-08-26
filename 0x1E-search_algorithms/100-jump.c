@@ -36,24 +36,23 @@ unsigned int end, int value, size_t size)
  */
 int jump_search(int *array, size_t size, int value)
 {
-	int i = 0;
-	int m = (int)sqrt(size);
-
 	if (!array)
 		return (-1);
 
+	unsigned int i = 0;
+	unsigned int m = sqrt(size);
 
-	while (i < (int)size)
+	while (i < size)
 	{
-		printf("Value checked array[%d] = [%d]", i, array[i]);
+		printf("Value checked array[%u] = [%i]\n", i, array[i]);
 		if (value >= array[i] && value <= array[i + m])
 		{
-			printf("Value found between indexes [%d] and [%d]", i, i + m);
+			printf("Value found between indexes [%u] and [%u]\n", i, i + m);
 			return (search_value(array, i, i + m, value, size));
 		}
 		i += m;
 	}
-	printf("Value found between indexes [%d] and [%d]", i - m, i);
+	printf("Value found between indexes [%u] and [%u]\n", i - m, i);
 
 	return (search_value(array, i - m, i, value, size));
 }
